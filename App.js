@@ -1,19 +1,15 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect } from 'react';
+
+import Navigator from './navigation/tabnav';
+
+import * as Font from 'expo-font';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+  useEffect(() => {
+    Font.loadAsync({
+      Montserrat: require('./assets/fonts/Montserrat-Regular.ttf'),
+      MontserratBold: require('./assets/fonts/Montserrat-SemiBold.ttf')
+    });
+  });
+  return <Navigator />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
