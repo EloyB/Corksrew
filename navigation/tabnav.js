@@ -2,7 +2,12 @@ import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
-import { Entypo, FontAwesome, MaterialIcons } from '@expo/vector-icons';
+import {
+  Entypo,
+  FontAwesome,
+  MaterialIcons,
+  Feather
+} from '@expo/vector-icons';
 
 import HomeScreen from '../screens/HomeScreen';
 import MyWinesListScreen from '../screens/MyWinesListScreen';
@@ -11,6 +16,7 @@ import CommumityScreen from '../screens/CommunityScreen';
 import AccountScreen from '../screens/AccountScreen';
 
 import AddWineNavButton from './components/AddWineNavButton';
+import UserCircle from '../components/UserCircle';
 
 const TabNavigator = createBottomTabNavigator(
   {
@@ -18,7 +24,7 @@ const TabNavigator = createBottomTabNavigator(
       screen: HomeScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <Entypo name='graduation-cap' color={tintColor} size={32} />
+          <Feather name='home' color={tintColor} size={32} />
         )
       }
     },
@@ -27,7 +33,7 @@ const TabNavigator = createBottomTabNavigator(
       screen: MyWinesListScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <FontAwesome name='search' color={tintColor} size={25} />
+          <Entypo name='list' color={tintColor} size={32} />
         )
       }
     },
@@ -41,7 +47,7 @@ const TabNavigator = createBottomTabNavigator(
       screen: CommumityScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <Entypo name='list' color={tintColor} size={32} />
+          <FontAwesome name='globe' color={tintColor} size={32} />
         )
       }
     },
@@ -49,7 +55,11 @@ const TabNavigator = createBottomTabNavigator(
       screen: AccountScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <MaterialIcons name='account-circle' color={tintColor} size={32} />
+          <UserCircle
+            size={32}
+            border={tintColor}
+            image={require('../assets/images/profile.jpg')}
+          />
         )
       }
     }
