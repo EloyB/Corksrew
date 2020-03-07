@@ -24,7 +24,7 @@ const TabNavigator = createBottomTabNavigator(
       screen: HomeScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <Feather name='home' color={tintColor} size={32} />
+          <FontAwesome name='globe' color={tintColor} size={26} />
         )
       }
     },
@@ -33,7 +33,7 @@ const TabNavigator = createBottomTabNavigator(
       screen: MyWinesListScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <Entypo name='list' color={tintColor} size={32} />
+          <Entypo name='list' color={tintColor} size={26} />
         )
       }
     },
@@ -47,7 +47,7 @@ const TabNavigator = createBottomTabNavigator(
       screen: CommumityScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <FontAwesome name='globe' color={tintColor} size={32} />
+          <Entypo name='location-pin' color={tintColor} size={26} />
         )
       }
     },
@@ -56,7 +56,7 @@ const TabNavigator = createBottomTabNavigator(
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <UserCircle
-            size={32}
+            size={26}
             border={tintColor}
             image={require('../assets/images/profile.jpg')}
           />
@@ -67,8 +67,8 @@ const TabNavigator = createBottomTabNavigator(
   {
     tabBarOptions: {
       showLabel: false,
-      activeTintColor: '#ab1c1c',
-      inactiveTintColor: 'black',
+      activeTintColor: '#c06262',
+      inactiveTintColor: '#282d44',
       style: {
         height: 70,
         elevation: 10,

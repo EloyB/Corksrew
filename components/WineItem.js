@@ -11,7 +11,7 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 
 const WineItem = props => (
-  <View style={{ width: '95%', justifyContent: 'center' }}>
+  <View style={{ width: '95%', justifyContent: 'center', marginVertical: 10 }}>
     <Image source={props.wineImage} style={styles.image}></Image>
     <TouchableWithoutFeedback
       onPress={() => Alert.alert('Redirect to DetailScreen')}

@@ -5,11 +5,18 @@ import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 const PrimaryButtonComponent = props => {
   return (
     <TouchableWithoutFeedback
-      style={{ borderRadius: 25, elevation: 8 }}
+      style={{ borderRadius: 25, elevation: 8, marginVertical: 10 }}
       onPress={props.onPress}
     >
-      <View style={styles.buttonBackground}>
-        <Text style={styles.buttonText}>{props.buttonText}</Text>
+      <View
+        style={{
+          ...styles.buttonBackground,
+          backgroundColor: props.backgroundColor
+        }}
+      >
+        <Text style={{ ...styles.buttonText, color: props.textColor }}>
+          {props.buttonText}
+        </Text>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -17,15 +24,13 @@ const PrimaryButtonComponent = props => {
 
 const styles = StyleSheet.create({
   buttonBackground: {
-    backgroundColor: '#ab1c1c',
-    height: 60,
+    height: 70,
     width: 350,
-    borderRadius: 25,
+    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center'
   },
   buttonText: {
-    color: 'white',
     fontSize: 20,
     fontFamily: 'Montserrat'
   }

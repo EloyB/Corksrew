@@ -12,10 +12,10 @@ const styles = StyleSheet.create({
   addButton: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: 75,
-    height: 60,
-    borderRadius: 20,
-    backgroundColor: '#ab1c1c'
+    width: 50,
+    height: 50,
+    borderRadius: 10,
+    backgroundColor: '#282d44'
   }
 });
 

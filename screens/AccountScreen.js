@@ -1,9 +1,17 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  TouchableWithoutFeedback
+} from 'react-native';
 
 import { Feather, AntDesign } from '@expo/vector-icons';
 
 import WineCounter from '../components/WineCounter';
+
+import { logOutUser } from '../firebase/Authentication';
 
 const AccountScreen = props => {
   return (
@@ -16,42 +24,42 @@ const AccountScreen = props => {
             width: '100%'
           }}
         />
-        <View style={styles.redOverlay} />
-        <View style={styles.userInfo}>
-          <Text style={styles.name}>Eloy Boone</Text>
-          <Text style={styles.email}>eloyboone@hotmail.com</Text>
-        </View>
+        <View style={styles.overlay} />
         <Feather
           name='settings'
           size={30}
           color='white'
           style={{ position: 'absolute', left: 20, top: 20 }}
         />
-        <AntDesign
-          name='logout'
-          size={30}
-          color='white'
-          style={{ position: 'absolute', right: 20, top: 20 }}
-        />
+        <TouchableWithoutFeedback onPress={logOutUser}>
+          <AntDesign
+            name='logout'
+            size={30}
+            color='white'
+            style={{ position: 'absolute', right: 20, top: 20 }}
+          />
+        </TouchableWithoutFeedback>
+        <View style={styles.userInfo}>
+          <Text style={styles.name}>Eloy Boone</Text>
+          <Text style={styles.email}>eloyboone@hotmail.com</Text>
+        </View>
+
         <WineCounter style={{ position: 'absolute' }} />
       </View>
       <View style={styles.userWines}>
-        <View style={{ flexDirection: 'row' }}>
-          <Text style={styles.tabText}>Favorites</Text>
-          <Text style={styles.tabText}>All</Text>
-        </View>
+        <Text style={styles.tabText}>Favorites</Text>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  redOverlay: {
+  overlay: {
     position: 'absolute',
     width: '100',
     height: '100%',
     width: '100%',
-    backgroundColor: 'rgba(171, 28, 28, 0.3)'
+    backgroundColor: 'rgba(40, 45, 68, 0.3)'
   },
   userInfo: {
     position: 'absolute',
@@ -79,12 +87,11 @@ const styles = StyleSheet.create({
   },
   tabText: {
     height: 80,
-    width: '50%',
     textAlign: 'center',
     textAlignVertical: 'center',
     fontSize: 20,
     fontFamily: 'MontserratBold',
-    color: '#cccccc'
+    color: '#c06262'
   }
 });
 

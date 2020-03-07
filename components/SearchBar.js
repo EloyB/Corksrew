@@ -26,8 +26,8 @@ const SearchBar = props => (
 const styles = StyleSheet.create({
   searchBar: {
     width: '90%',
-    height: 50,
-    borderRadius: 25,
+    height: 60,
+    borderRadius: 10,
     backgroundColor: 'white',
     elevation: 4,
     justifyContent: 'center',

@@ -8,8 +8,12 @@ const CustomInputField = props => (
       width: props.width
     }}
   >
-    <Text style={styles.inputTitle}>{props.inputTitle}</Text>
-    <TextInput onChangeText={props.onChangeText} />
+    <TextInput
+      onChangeText={props.onChangeText}
+      placeholder={props.inputTitle}
+      style={{ fontSize: 17 }}
+      secureTextEntry={props.secure}
+    />
   </View>
 );
 
@@ -17,10 +21,15 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: 'white',
     height: 65,
-    borderRadius: 25,
+    borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 20,
-    elevation: 2
+    elevation: 2,
+    marginHorizontal: 5,
+    marginVertical: 10,
+    borderColor: '#c06262',
+    borderWidth: 2,
+    justifyContent: 'center'
   },
   inputTitle: {
     color: '#ab1c1c',
